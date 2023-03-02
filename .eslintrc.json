@@ -17,7 +17,7 @@
     "sourceType": "module",
     "project": ["./tsconfig.json"]
   },
-  "plugins": ["react", "@typescript-eslint", "import"],
+  "plugins": ["react", "@typescript-eslint", "import", "prettier"],
   "rules": {
     "space-before-function-paren": "off",
     "@typescript-eslint/space-before-function-paren": "off",
