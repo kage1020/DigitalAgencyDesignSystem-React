@@ -27,7 +27,7 @@
     "@typescript-eslint/strict-boolean-expressions": "off",
     "@typescript-eslint/restrict-plus-operands": "off",
     "prettier/prettier": [
-      "error",
+      "warn",
       {
         "endOfLine": "crlf"
       }
