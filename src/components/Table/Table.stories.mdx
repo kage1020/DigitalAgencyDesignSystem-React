@@ -1,0 +1,21 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs'
+
+import Table from './Table'
+
+<Meta title='components/Table' component={Table} />
+
+export const Template = (args) => <Table {...args} />
+
+# Table
+
+## 標準コンポーネント
+
+モバイルなど画面幅が狭い端末の場合には、テーブル幅が画面内に収まらないことがあります。その場合にはブラウザの水平スクロールバーを使用することを推奨します。ユーザーがスクロールバーの存在に気づけるよう、デザインや開発の際には、テーブルの高さや、スクロールバー周囲のスペースなどを十分に考慮してください。
+
+テーブルは行や列の数が多くなりがちですが、モバイルファーストの観点からも、モバイルやタブレット端末での見え方に気をつけながら作成してください。
+
+<Canvas isColumn>
+  <Story name='Normal'>{Template.bind({})}</Story>
+</Canvas>
+
+<ArgsTable of={Table} />

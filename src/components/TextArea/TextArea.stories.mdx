@@ -1,0 +1,58 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs'
+
+import TextArea from './TextArea'
+
+<Meta
+  title='components/TextArea'
+  component={TextArea}
+  args={{ name: 'test', label: 'ラベル', placeholder: 'プレイスホルダー' }}
+/>
+
+export const Template = (args) => <TextArea {...args} />
+
+# TextArea
+
+テキストエリアコンポーネントは、1 行以上のテキストを入力する場合に使用します。
+
+## 文字数に制限がある場合
+
+文字数制限、入力中の文字数、超過文字数が具体的にわかるよう文字数カウンターを常時表示します。ラベルにのみ文字数を入れたり、超過の場合に自動で削除される仕様は、エラー内容に対する理解性を下げるため避けてください。
+
+<Canvas isColumn>
+  <Story
+    name='Default'
+    args={{
+      helperText: 'ヘルパーテキストが入ります。',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name='Filled'
+    args={{
+      value: '入力済みの内容',
+      required: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name='Error'
+    args={{
+      required: true,
+      errorText: 'エラーテキストが入ります。',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name='Disabled'
+    args={{
+      disabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable of={TextArea} />

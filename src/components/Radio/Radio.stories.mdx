@@ -1,0 +1,100 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs'
+
+import Radio from './Radio'
+
+<Meta
+  title='components/Radio'
+  component={Radio}
+  args={{
+    name: 'test',
+    label: 'ラベル',
+    options: ['選択肢1', '選択肢2', '選択肢3', '選択肢4', '選択肢5'],
+  }}
+/>
+
+export const Template = (args) => <Radio {...args} />
+
+# Radio
+
+ラジオボタンは、2〜5 個の項目の中からひとつの選択肢を選ぶことを可能にします。
+
+<Canvas isColumn>
+  <Story
+    name='NormalOptional'
+    args={{
+      variant: 'normal',
+      helperText: 'ヘルパーテキストが入ります。',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name='NormalRequired'
+    args={{
+      variant: 'normal',
+      required: true,
+      value: '選択肢2',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name='NormalError'
+    args={{
+      variant: 'normal',
+      required: true,
+      errorText: 'エラーテキストが入ります。',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name='NormalDisabled'
+    args={{
+      variant: 'normal',
+      disabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name='TileOptional'
+    args={{
+      variant: 'tile',
+      helperText: 'ヘルパーテキストが入ります。',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name='TileRequired'
+    args={{
+      variant: 'tile',
+      required: true,
+      value: '選択肢2',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name='TileError'
+    args={{
+      variant: 'tile',
+      required: true,
+      errorText: 'エラーテキストが入ります。',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name='TileDisabled'
+    args={{
+      variant: 'tile',
+      disabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable of={Radio} />

@@ -1,0 +1,20 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs'
+
+import { CountBadgeNavigation } from './Navigation'
+
+<Meta title='components/Navigation' component={CountBadgeNavigation} />
+
+export const Template = (args) => <CountBadgeNavigation {...args} />
+
+# Navigation
+
+## Count Badge
+
+ボトムナビゲーションは 2〜5 個までの目的地へのアクセスを可能にするものです。
+利用者がコンテンツの全体像と自分の現在地を把握し、自分のニーズに合う目的地を見つけやすくします。
+
+ボトムナビゲーションは、2 個以上、5 個以下のメニューを配置してください。6 個以上は小さなモバイルデバイスでは文字と文字の間に十分な間隔を確保できません。6 個以上のメニューが存在する場合はドロワーメニューを検討してください。
+
+<Canvas>
+  <Story name='Count'>{Template.bind({})}</Story>
+</Canvas>

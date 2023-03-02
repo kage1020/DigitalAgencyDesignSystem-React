@@ -1,0 +1,68 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs'
+
+import CircleButton from './Circle'
+
+<Meta title='components/Button' component={CircleButton} />
+
+export const Template = (args) => <CircleButton {...args} />
+
+# CircleButton
+
+ボタンの幅は、スマートフォンの場合は上記のコンテンツと等倍とし、タブレット以降はフォームに付随するボタンの場合はフォーム幅と等倍とします。
+
+ボタンの外形は「正円」とし、ボタンとして機能させる領域も円の範囲内とする。
+
+## ページ上部に戻るボタン
+
+アクセシビリティの配慮として、「ページ上部に戻る」という alt を設置する。
+
+## 最初へボタン
+
+押下すると、0 ページ目に移動する、カレントが 0 ページ目の時は表示されない。
+
+## 最後へボタン
+
+押下すると、最終ページ目に移動する、カレントが最終ページ目の時は表示されない。
+
+## 次へボタン
+
+押下すると、カレントページ No + 1 ページ目に移動する、カレントが最終ページ目のときは表示されない。
+
+## 前へボタン
+
+押下すると、カレントページ No - 1 ページ目に移動する、カレントが 0 目のときは表示されない。
+
+## ページ No ボタン Before / ページ No ボタン After
+
+カレントからみて、前-3 ページ個を表示します。押下すると該当ページ No ページに移動する。
+
+カレントからみて、前+3 ページ個を表示します。押下すると該当ページ No ページに移動する。
+
+<Canvas isColumn>
+  <Story name='PageTop' args={{ variant: 'top' }}>
+    {Template.bind({})}
+  </Story>
+  <Story name='First' args={{ variant: 'first' }}>
+    {Template.bind({})}
+  </Story>
+  <Story name='Last' args={{ variant: 'last' }}>
+    {Template.bind({})}
+  </Story>
+  <Story name='Next' args={{ variant: 'next' }}>
+    {Template.bind({})}
+  </Story>
+  <Story name='Prev' args={{ variant: 'prev' }}>
+    {Template.bind({})}
+  </Story>
+  <Story name='Text' args={{ variant: 'text', text: 99 }}>
+    {Template.bind({})}
+  </Story>
+  <Story name='IconDisabled' args={{ variant: 'first', disabled: true }}>
+    {Template.bind({})}
+  </Story>
+  <Story name='TextDisabled' args={{ variant: 'text', text: 99, disabled: true }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable of={CircleButton} />

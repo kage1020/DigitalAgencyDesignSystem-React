@@ -1,0 +1,58 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs'
+
+import Select from './Select'
+
+<Meta
+  title='components/Select'
+  component={Select}
+  args={{
+    name: 'test',
+    label: 'ラベル',
+    options: ['選択肢1', '選択肢2', '選択肢3', '選択肢4', '選択肢5', '選択肢6'],
+  }}
+/>
+
+export const Template = (args) => <Select {...args} />
+
+# Select
+
+選択コンポーネントは、長いリストの中からひとつの選択肢を選ぶことを可能にします。
+
+<Canvas isColumn>
+  <Story
+    name='Default'
+    args={{
+      helperText: 'ヘルパーテキストが入ります。',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name='Selected'
+    args={{
+      value: '選択肢1',
+      required: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name='Error'
+    args={{
+      required: true,
+      errorText: 'エラーテキストが入ります。',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name='Disabled'
+    args={{
+      disabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable of={Select} />
