@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    button,[type='button'],[type='reset'],[type='submit'] {
+        background-color: inherit;
+    }
+
+    h1 {
+        @apply text-l mt-[64px] mb-[24px];
+    }
+
+    h2 {
+        @apply text-m mt-[64px] mb-[24px];
+    }
+
+    h3 {
+        @apply text-s mt-[40px] mb-[24px];
+    }
+
+    h4 {
+        @apply text-xs mt-[40px] mb-[16px];
+    }
+
+    h5 {
+        @apply text-xxs mt-[40px] mb-[16px];
+    }
+
+    h6 {
+        @apply mt-[24px] mb-[16px];
+    }
+}
