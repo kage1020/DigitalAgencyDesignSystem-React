@@ -1,11 +1,7 @@
 import React from 'react';
 import { IconProps } from '../../types';
 
-export function BankAccountOutlinedIcon({
-  className,
-  size = 24,
-  color = 'currentColor',
-}: IconProps) {
+export function BankAccountOutlined({ className, size = 24, color = 'currentColor' }: IconProps) {
   if (size % 8 !== 0) {
     console.warn(`The size prop (${size}) should be a multiple of 8.`);
   }
@@ -37,7 +33,7 @@ export function BankAccountOutlinedIcon({
   );
 }
 
-export function BankAccountFilledIcon({ className, size = 24, color = 'currentColor' }: IconProps) {
+export function BankAccountFilled({ className, size = 24, color = 'currentColor' }: IconProps) {
   if (size % 8 !== 0) {
     console.warn(`The size prop (${size}) should be a multiple of 8.`);
   }

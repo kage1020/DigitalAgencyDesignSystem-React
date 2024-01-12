@@ -1,7 +1,7 @@
 import React from 'react';
 import { IconProps } from '../../types';
 
-export function DepartureOutlinedIcon({ className, size = 24, color = 'currentColor' }: IconProps) {
+export function DepartureOutlined({ className, size = 24, color = 'currentColor' }: IconProps) {
   if (size % 8 !== 0) {
     console.warn(`The size prop (${size}) should be a multiple of 8.`);
   }
@@ -33,7 +33,7 @@ export function DepartureOutlinedIcon({ className, size = 24, color = 'currentCo
   );
 }
 
-export function DepartureFilledIcon({ className, size = 24, color = 'currentColor' }: IconProps) {
+export function DepartureFilled({ className, size = 24, color = 'currentColor' }: IconProps) {
   if (size % 8 !== 0) {
     console.warn(`The size prop (${size}) should be a multiple of 8.`);
   }

@@ -14,7 +14,7 @@ function Icons({ size, color }: IconProps) {
     >
       {IconList.map((i) => (
         <div
-          key={i.name}
+          key={i.label}
           style={{
             display: 'grid',
             gridTemplateRows: 'subgrid',
@@ -26,7 +26,7 @@ function Icons({ size, color }: IconProps) {
           <div style={{ display: 'grid', placeItems: 'center' }}>
             <i.icon size={size} color={color} />
           </div>
-          <p style={{ margin: '0.25rem 0', wordBreak: 'break-all' }}>{i.name}</p>
+          <p style={{ margin: '0.25rem 0', wordBreak: 'break-all' }}>{i.label}</p>
         </div>
       ))}
     </div>

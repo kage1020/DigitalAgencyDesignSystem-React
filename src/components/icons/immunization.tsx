@@ -1,11 +1,7 @@
 import React from 'react';
 import { IconProps } from '../../types';
 
-export function ImmunizationOutlinedIcon({
-  className,
-  size = 24,
-  color = 'currentColor',
-}: IconProps) {
+export function ImmunizationOutlined({ className, size = 24, color = 'currentColor' }: IconProps) {
   if (size % 8 !== 0) {
     console.warn(`The size prop (${size}) should be a multiple of 8.`);
   }
@@ -35,11 +31,7 @@ export function ImmunizationOutlinedIcon({
   );
 }
 
-export function ImmunizationFilledIcon({
-  className,
-  size = 24,
-  color = 'currentColor',
-}: IconProps) {
+export function ImmunizationFilled({ className, size = 24, color = 'currentColor' }: IconProps) {
   if (size % 8 !== 0) {
     console.warn(`The size prop (${size}) should be a multiple of 8.`);
   }

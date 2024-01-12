@@ -1,7 +1,7 @@
 import React from 'react';
 import { IconProps } from '../../types';
 
-export function FastTrackOutlinedIcon({ className, size = 24, color = 'currentColor' }: IconProps) {
+export function FastTrackOutlined({ className, size = 24, color = 'currentColor' }: IconProps) {
   if (size % 8 !== 0) {
     console.warn(`The size prop (${size}) should be a multiple of 8.`);
   }
@@ -33,7 +33,7 @@ export function FastTrackOutlinedIcon({ className, size = 24, color = 'currentCo
   );
 }
 
-export function FastTrackFilledIcon({ className, size = 24, color = 'currentColor' }: IconProps) {
+export function FastTrackFilled({ className, size = 24, color = 'currentColor' }: IconProps) {
   if (size % 8 !== 0) {
     console.warn(`The size prop (${size}) should be a multiple of 8.`);
   }

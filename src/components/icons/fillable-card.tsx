@@ -1,11 +1,7 @@
 import React from 'react';
 import { IconProps } from '../../types';
 
-export function FillableCardOutlinedIcon({
-  className,
-  size = 24,
-  color = 'currentColor',
-}: IconProps) {
+export function FillableCardOutlined({ className, size = 24, color = 'currentColor' }: IconProps) {
   if (size % 8 !== 0) {
     console.warn(`The size prop (${size}) should be a multiple of 8.`);
   }
@@ -37,11 +33,7 @@ export function FillableCardOutlinedIcon({
   );
 }
 
-export function FillableCardFilledIcon({
-  className,
-  size = 24,
-  color = 'currentColor',
-}: IconProps) {
+export function FillableCardFilled({ className, size = 24, color = 'currentColor' }: IconProps) {
   if (size % 8 !== 0) {
     console.warn(`The size prop (${size}) should be a multiple of 8.`);
   }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { IconProps } from '../../types';
 
-export function PrivacyProtectionOutlinedIcon({
+export function PrivacyProtectionOutlined({
   className,
   size = 24,
   color = 'currentColor',
@@ -37,7 +37,7 @@ export function PrivacyProtectionOutlinedIcon({
   );
 }
 
-export function PrivacyProtectionFilledIcon({
+export function PrivacyProtectionFilled({
   className,
   size = 24,
   color = 'currentColor',
