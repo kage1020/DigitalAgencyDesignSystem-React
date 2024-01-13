@@ -12,7 +12,7 @@ export function ArrowUpOutlined({ className, size = 24, color = 'currentColor' }
       xmlns='http://www.w3.org/2000/svg'
       width={size}
       height={size}
-      style={{ color: color }}
+      style={color ? { color: color } : undefined}
       viewBox='0 0 25 25'
       fill='none'
     >
@@ -35,7 +35,7 @@ export function ArrowUpFilled({ className, size = 24, color = 'currentColor' }: 
       xmlns='http://www.w3.org/2000/svg'
       width={size}
       height={size}
-      style={{ color: color }}
+      style={color ? { color: color } : undefined}
       viewBox='0 0 25 25'
       fill='none'
     >

@@ -12,7 +12,7 @@ export function WorkOutlined({ className, size = 24, color = 'currentColor' }: I
       xmlns='http://www.w3.org/2000/svg'
       width={size}
       height={size}
-      style={{ color: color }}
+      style={color ? { color: color } : undefined}
       viewBox='0 0 25 25'
       fill='none'
     >
@@ -42,7 +42,7 @@ export function WorkFilled({ className, size = 24, color = 'currentColor' }: Ico
       xmlns='http://www.w3.org/2000/svg'
       width={size}
       height={size}
-      style={{ color: color }}
+      style={color ? { color: color } : undefined}
       viewBox='0 0 25 25'
       fill='none'
     >

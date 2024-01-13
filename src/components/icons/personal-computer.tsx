@@ -16,7 +16,7 @@ export function PersonalComputerOutlined({
       xmlns='http://www.w3.org/2000/svg'
       width={size}
       height={size}
-      style={{ color: color }}
+      style={color ? { color: color } : undefined}
       viewBox='0 0 25 25'
       fill='none'
     >
@@ -50,7 +50,7 @@ export function PersonalComputerFilled({
       xmlns='http://www.w3.org/2000/svg'
       width={size}
       height={size}
-      style={{ color: color }}
+      style={color ? { color: color } : undefined}
       viewBox='0 0 25 25'
       fill='none'
     >

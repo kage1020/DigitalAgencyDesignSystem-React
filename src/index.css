@@ -8,26 +8,26 @@
     }
 
     h1 {
-        @apply text-l mt-[64px] mb-[24px];
+        @apply text-l mt-8 mb-3;
     }
 
     h2 {
-        @apply text-m mt-[64px] mb-[24px];
+        @apply text-m mt-8 mb-3;
     }
 
     h3 {
-        @apply text-s mt-[40px] mb-[24px];
+        @apply text-s mt-5 mb-3;
     }
 
     h4 {
-        @apply text-xs mt-[40px] mb-[16px];
+        @apply text-xs mt-5 mb-2;
     }
 
     h5 {
-        @apply text-xxs mt-[40px] mb-[16px];
+        @apply text-xxs mt-5 mb-2;
     }
 
     h6 {
-        @apply mt-[24px] mb-[16px];
+        @apply mt-3 mb-2;
     }
 }

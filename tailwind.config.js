@@ -23,6 +23,10 @@ export default {
       full: '9999px',
     },
     colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      inherit: 'inherit',
+      initial: 'initial',
       white: '#FFFFFF',
       black: '#000000',
       blue: {
@@ -266,6 +270,7 @@ export default {
       },
     },
     fontSize: {
+      xxxs: ['14px', { lineHeight: '1', letterSpacing: '0.04em', fontWeight: '400' }],
       'xxs-mobile': ['16px', { lineHeight: '1.7', letterSpacing: '0.04em', fontWeight: '500' }],
       xxs: ['20px', { lineHeight: '1.5', letterSpacing: '0.04em', fontWeight: '400' }],
       'xs-mobile': ['20px', { lineHeight: '1.5', letterSpacing: '0.04em', fontWeight: '500' }],
@@ -291,6 +296,8 @@ export default {
       m: 500,
       b: 700,
     },
+    height: { ...defaultTheme.spacing, full: '100%', screen: '100vh' },
+    inset: defaultTheme.spacing,
     letterSpacing: {
       s: '0.02em',
       m: '0.04em',
@@ -300,6 +307,10 @@ export default {
       m: '1.5',
       l: '1.7',
     },
+    maxHeight: { ...defaultTheme.spacing, full: '100%', screen: '100vh' },
+    maxWidth: { ...defaultTheme.spacing, full: '100%', screen: '100vw' },
+    minHeight: { ...defaultTheme.spacing, full: '100%', screen: '100vh' },
+    minWidth: { ...defaultTheme.spacing, full: '100%', screen: '100vw' },
     screens: {
       desktop: '768px',
       // desktop: '992px', // for app
@@ -319,10 +330,15 @@ export default {
       34: '272px',
       55: '440px',
     },
+    translate: { ...defaultTheme.spacing, full: '100%' },
+    width: { ...defaultTheme.spacing, full: '100%', screen: '100vw' },
     extend: {
       fontFamily: {
         'noto-sans': ['"Noto Sans"', ...defaultTheme.fontFamily.sans],
         'noto-sans-jp': ['"Noto Sans JP"', ...defaultTheme.fontFamily.sans],
+      },
+      transitionDuration: {
+        400: '400ms',
       },
     },
   },

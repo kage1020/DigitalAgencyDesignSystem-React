@@ -1,18 +1,14 @@
-import { useState } from 'react';
-import './index.css';
+import Button from './components/Button';
+import ScrollTopButton from './components/ScrollTop';
+import BottomNavigation, { BottomNavigationWithDrawer } from './components/BottomNavigation';
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div className='App'>
-      <h1 className='font-noto-sans rounded-full bg-red-50'>Vite + React</h1>
-      <div className='card'>
-        <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
+      {/* <Button size='small'>ラベル</Button> */}
+      {/* <ScrollTopButton /> */}
+      {/* <BottomNavigation active='home' /> */}
+      <BottomNavigationWithDrawer active='home' />
     </div>
   );
 }
