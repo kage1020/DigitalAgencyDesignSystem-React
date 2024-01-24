@@ -15,6 +15,7 @@ export function HouseOutlined({ className, size = 24, color }: IconProps) {
       style={color ? { color: color } : undefined}
       viewBox='0 0 25 25'
       fill='none'
+      data-testid='house-outlined'
     >
       <g clipPath='url(#clip0_115_5743)'>
         <path
@@ -47,6 +48,7 @@ export function HouseFilled({ className, size = 24, color }: IconProps) {
       style={color ? { color: color } : undefined}
       viewBox='0 0 25 25'
       fill='none'
+      data-testid='house-filled'
     >
       <g clipPath='url(#clip0_115_5748)'>
         <path

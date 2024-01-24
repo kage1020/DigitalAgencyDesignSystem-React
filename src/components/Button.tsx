@@ -28,6 +28,7 @@ export default function Button({
       )}
       type={type}
       {...props}
+      data-testid='button'
     >
       {children}
     </button>

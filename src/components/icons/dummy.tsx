@@ -1,7 +1,7 @@
 import React from 'react';
 import { IconProps } from '../../types';
 
-export function DummyOutlined({ className, size = 24, color = 'currentColor' }: IconProps) {
+export function DummyOutlined({ className, size = 24, color }: IconProps) {
   if (size % 8 !== 0) {
     console.warn(`The size prop (${size}) should be a multiple of 8.`);
   }
@@ -15,6 +15,7 @@ export function DummyOutlined({ className, size = 24, color = 'currentColor' }: 
       style={color ? { color: color } : undefined}
       viewBox='0 0 25 25'
       fill='none'
+      data-testid='dummy-outlined'
     >
       <mask
         id='mask0_17903_18266'

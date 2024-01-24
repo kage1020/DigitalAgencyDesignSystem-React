@@ -1,7 +1,7 @@
 import React from 'react';
 import { IconProps } from '../../types';
 
-export function ArrowUpOutlined({ className, size = 24, color = 'currentColor' }: IconProps) {
+export function ArrowUpOutlined({ className, size = 24, color }: IconProps) {
   if (size % 8 !== 0) {
     console.warn(`The size prop (${size}) should be a multiple of 8.`);
   }
@@ -15,6 +15,7 @@ export function ArrowUpOutlined({ className, size = 24, color = 'currentColor' }
       style={color ? { color: color } : undefined}
       viewBox='0 0 25 25'
       fill='none'
+      data-testid='arrow-up-outlined'
     >
       <path
         d='M4.86035 16.6464L3.86035 15.6464L12.8604 6.54639L21.8604 15.6464L20.8604 16.6464L12.8604 8.74639L4.86035 16.6464Z'
@@ -24,7 +25,7 @@ export function ArrowUpOutlined({ className, size = 24, color = 'currentColor' }
   );
 }
 
-export function ArrowUpFilled({ className, size = 24, color = 'currentColor' }: IconProps) {
+export function ArrowUpFilled({ className, size = 24, color }: IconProps) {
   if (size % 8 !== 0) {
     console.warn(`The size prop (${size}) should be a multiple of 8.`);
   }
@@ -38,6 +39,7 @@ export function ArrowUpFilled({ className, size = 24, color = 'currentColor' }: 
       style={color ? { color: color } : undefined}
       viewBox='0 0 25 25'
       fill='none'
+      data-testid='arrow-up-filled'
     >
       <g clipPath='url(#clip0_115_5399)'>
         <path

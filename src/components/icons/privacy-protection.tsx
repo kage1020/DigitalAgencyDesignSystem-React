@@ -1,11 +1,7 @@
 import React from 'react';
 import { IconProps } from '../../types';
 
-export function PrivacyProtectionOutlined({
-  className,
-  size = 24,
-  color = 'currentColor',
-}: IconProps) {
+export function PrivacyProtectionOutlined({ className, size = 24, color }: IconProps) {
   if (size % 8 !== 0) {
     console.warn(`The size prop (${size}) should be a multiple of 8.`);
   }
@@ -19,6 +15,7 @@ export function PrivacyProtectionOutlined({
       style={color ? { color: color } : undefined}
       viewBox='0 0 25 25'
       fill='none'
+      data-testid='privacy-protection-outlined'
     >
       <g clipPath='url(#clip0_115_5680)'>
         <path
@@ -37,11 +34,7 @@ export function PrivacyProtectionOutlined({
   );
 }
 
-export function PrivacyProtectionFilled({
-  className,
-  size = 24,
-  color = 'currentColor',
-}: IconProps) {
+export function PrivacyProtectionFilled({ className, size = 24, color }: IconProps) {
   if (size % 8 !== 0) {
     console.warn(`The size prop (${size}) should be a multiple of 8.`);
   }
@@ -55,6 +48,7 @@ export function PrivacyProtectionFilled({
       style={color ? { color: color } : undefined}
       viewBox='0 0 25 25'
       fill='none'
+      data-testid='privacy-protection-filled'
     >
       <g clipPath='url(#clip0_115_5686)'>
         <path

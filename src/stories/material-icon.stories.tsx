@@ -34,7 +34,7 @@ function Icons({ size, color }: IconProps) {
 }
 
 const meta: Meta = {
-  title: 'Icon/MaterialDesignIcons',
+  title: 'Components/Icons/MaterialDesignIcons',
   component: Icons,
   tags: ['autodocs'],
   argTypes: {

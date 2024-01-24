@@ -12,6 +12,7 @@ export default function ScrollTopButton({ className, ...props }: ScrollTopButton
       )}
       type='button'
       {...props}
+      data-testid='scroll-top-button'
     >
       <MdArrowUpward />
     </button>

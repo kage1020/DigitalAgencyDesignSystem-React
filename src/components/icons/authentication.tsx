@@ -1,11 +1,7 @@
 import React from 'react';
 import { IconProps } from '../../types';
 
-export function AuthenticationOutlined({
-  className,
-  size = 24,
-  color = 'currentColor',
-}: IconProps) {
+export function AuthenticationOutlined({ className, size = 24, color }: IconProps) {
   if (size % 8 !== 0) {
     console.warn(`The size prop (${size}) should be a multiple of 8.`);
   }
@@ -19,6 +15,7 @@ export function AuthenticationOutlined({
       style={color ? { color: color } : undefined}
       viewBox='0 0 25 25'
       fill='none'
+      data-testid='authentication-outlined'
     >
       <g clipPath='url(#clip0_115_5894)'>
         <path
@@ -37,7 +34,7 @@ export function AuthenticationOutlined({
   );
 }
 
-export function AuthenticationFilled({ className, size = 24, color = 'currentColor' }: IconProps) {
+export function AuthenticationFilled({ className, size = 24, color }: IconProps) {
   if (size % 8 !== 0) {
     console.warn(`The size prop (${size}) should be a multiple of 8.`);
   }
@@ -51,6 +48,7 @@ export function AuthenticationFilled({ className, size = 24, color = 'currentCol
       style={color ? { color: color } : undefined}
       viewBox='0 0 25 25'
       fill='none'
+      data-testid='authentication-filled'
     >
       <g clipPath='url(#clip0_115_5899)'>
         <path

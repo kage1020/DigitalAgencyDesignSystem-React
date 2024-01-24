@@ -1,7 +1,7 @@
 import React from 'react';
 import { IconProps } from '../../types';
 
-export function PrinterOutlined({ className, size = 24, color = 'currentColor' }: IconProps) {
+export function PrinterOutlined({ className, size = 24, color }: IconProps) {
   if (size % 8 !== 0) {
     console.warn(`The size prop (${size}) should be a multiple of 8.`);
   }
@@ -15,6 +15,7 @@ export function PrinterOutlined({ className, size = 24, color = 'currentColor' }
       style={color ? { color: color } : undefined}
       viewBox='0 0 25 25'
       fill='none'
+      data-testid='printer-outlined'
     >
       <g clipPath='url(#clip0_115_5579)'>
         <path
@@ -33,7 +34,7 @@ export function PrinterOutlined({ className, size = 24, color = 'currentColor' }
   );
 }
 
-export function PrinterFilled({ className, size = 24, color = 'currentColor' }: IconProps) {
+export function PrinterFilled({ className, size = 24, color }: IconProps) {
   if (size % 8 !== 0) {
     console.warn(`The size prop (${size}) should be a multiple of 8.`);
   }
@@ -47,6 +48,7 @@ export function PrinterFilled({ className, size = 24, color = 'currentColor' }: 
       style={color ? { color: color } : undefined}
       viewBox='0 0 25 25'
       fill='none'
+      data-testid='printer-filled'
     >
       <g clipPath='url(#clip0_115_5585)'>
         <path

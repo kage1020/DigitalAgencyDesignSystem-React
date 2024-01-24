@@ -34,7 +34,7 @@ function Icons({ size, color }: IconProps) {
 }
 
 const meta: Meta = {
-  title: 'Icon/Icons',
+  title: 'Components/Icons/Default',
   component: Icons,
   tags: ['autodocs'],
   argTypes: {

@@ -1,7 +1,7 @@
 import ScrollTopButton from '../components/ScrollTop';
 
 export default {
-  title: 'Button/ScrollTop',
+  title: 'Components/Button/ScrollTop',
   component: ScrollTopButton,
   tags: ['autodocs'],
 };

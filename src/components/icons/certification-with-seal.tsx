@@ -1,11 +1,7 @@
 import React from 'react';
 import { IconProps } from '../../types';
 
-export function CertificationWithSealOutlined({
-  className,
-  size = 24,
-  color = 'currentColor',
-}: IconProps) {
+export function CertificationWithSealOutlined({ className, size = 24, color }: IconProps) {
   if (size % 8 !== 0) {
     console.warn(`The size prop (${size}) should be a multiple of 8.`);
   }
@@ -19,6 +15,7 @@ export function CertificationWithSealOutlined({
       style={color ? { color: color } : undefined}
       viewBox='0 0 25 25'
       fill='none'
+      data-testid='certification-with-seal-outlined'
     >
       <g clipPath='url(#clip0_115_5405)'>
         <path
@@ -37,11 +34,7 @@ export function CertificationWithSealOutlined({
   );
 }
 
-export function CertificationWithSealFilled({
-  className,
-  size = 24,
-  color = 'currentColor',
-}: IconProps) {
+export function CertificationWithSealFilled({ className, size = 24, color }: IconProps) {
   if (size % 8 !== 0) {
     console.warn(`The size prop (${size}) should be a multiple of 8.`);
   }
@@ -55,6 +48,7 @@ export function CertificationWithSealFilled({
       style={color ? { color: color } : undefined}
       viewBox='0 0 25 25'
       fill='none'
+      data-testid='certification-with-seal-filled'
     >
       <g clipPath='url(#clip0_115_5413)'>
         <path

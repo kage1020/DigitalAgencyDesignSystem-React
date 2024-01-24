@@ -1,7 +1,7 @@
 import React from 'react';
 import { IconProps } from '../../types';
 
-export function DocumentsOutlined({ className, size = 24, color = 'currentColor' }: IconProps) {
+export function DocumentsOutlined({ className, size = 24, color }: IconProps) {
   if (size % 8 !== 0) {
     console.warn(`The size prop (${size}) should be a multiple of 8.`);
   }
@@ -15,6 +15,7 @@ export function DocumentsOutlined({ className, size = 24, color = 'currentColor'
       style={color ? { color: color } : undefined}
       viewBox='0 0 25 25'
       fill='none'
+      data-testid='documents-outlined'
     >
       <g clipPath='url(#clip0_115_5592)'>
         <path
@@ -31,7 +32,7 @@ export function DocumentsOutlined({ className, size = 24, color = 'currentColor'
   );
 }
 
-export function DocumentsFilled({ className, size = 24, color = 'currentColor' }: IconProps) {
+export function DocumentsFilled({ className, size = 24, color }: IconProps) {
   if (size % 8 !== 0) {
     console.warn(`The size prop (${size}) should be a multiple of 8.`);
   }
@@ -45,6 +46,7 @@ export function DocumentsFilled({ className, size = 24, color = 'currentColor' }
       style={color ? { color: color } : undefined}
       viewBox='0 0 25 25'
       fill='none'
+      data-testid='documents-filled'
     >
       <g clipPath='url(#clip0_115_5595)'>
         <path

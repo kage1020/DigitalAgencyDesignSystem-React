@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useRef, useState } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { BottomNavigationProps } from '../types';
 import { cn } from '../libs';
 import {
@@ -10,13 +10,15 @@ import {
   HealthOutlined,
   MeFilled,
   MeOutlined,
-  MenuFilled,
   MenuOutlined,
   NotificationFilled,
   NotificationOutlined,
   SearchFilled,
   SearchOutlined,
 } from './icons';
+import Drawer from './Drawer';
+import useDrawer from '../hooks/useDrawer';
+import NotificationBadge from './NotificationBadge';
 
 type NavigationName = 'home' | 'search' | 'notification' | 'me';
 
@@ -28,6 +30,7 @@ const items = [
     label: 'ホーム',
     onClick: () => console.log('home'),
     href: '/',
+    notifications: 0,
   },
   {
     name: 'search',
@@ -36,6 +39,7 @@ const items = [
     label: 'みつける',
     onClick: () => console.log('search'),
     href: '/search',
+    notifications: 1,
   },
   {
     name: 'notification',
@@ -44,6 +48,7 @@ const items = [
     label: 'お知らせ',
     onClick: () => console.log('notification'),
     href: '/notification',
+    notifications: 2,
   },
   {
     name: 'me',
@@ -52,6 +57,7 @@ const items = [
     label: 'わたし',
     onClick: () => console.log('me clicked'),
     href: '/me',
+    notifications: 3,
   },
 ];
 
@@ -68,7 +74,14 @@ export default function BottomNavigation({
   }, []);
 
   return (
-    <nav className={cn('flex px-1 items-start self-stretch bg-white', className)} {...props}>
+    <nav
+      className={cn(
+        'flex px-1 items-start self-stretch bg-white border-t-2 border-grey-200',
+        className
+      )}
+      {...props}
+      data-testid='bottom-navigation'
+    >
       {items.map((item) => (
         <Fragment key={item.label}>
           {item.onClick && (
@@ -76,6 +89,7 @@ export default function BottomNavigation({
               className='flex flex-col justify-center items-center flex-grow pt-1 pb-[12px]'
               type='button'
               onClick={item.onClick}
+              data-testid={item.name}
             >
               <div className='flex flex-col justify-center items-center'>
                 {active === item.name && <item.active className='text-blue-900' />}
@@ -95,6 +109,7 @@ export default function BottomNavigation({
             <a
               className='flex flex-col justify-center items-center flex-grow pt-1 pb-[12px]'
               href={item.href}
+              data-testid={item.name}
             >
               <div className='flex flex-col justify-center items-center'>
                 {active === item.name && <item.active className='text-blue-900' />}
@@ -143,8 +158,7 @@ export function BottomNavigationWithDrawer({
   active,
   ...props
 }: BottomNavigationProps<ManyNavigationName>) {
-  const [open, setOpen] = useState(false);
-  const dialogRef = useRef<HTMLDialogElement | null>(null);
+  const { setOpen } = useDrawer();
 
   useEffect(() => {
     // if pathname matches to href property, set active to name
@@ -156,8 +170,12 @@ export function BottomNavigationWithDrawer({
 
   return (
     <nav
-      className={cn('flex px-1 items-start self-stretch bg-white relative z-0', className)}
+      className={cn(
+        'flex px-1 items-start self-stretch bg-white relative border-t-2 border-grey-200',
+        className
+      )}
       {...props}
+      data-testid='bottom-navigation'
     >
       {manyItems.slice(0, 4).map((item) => (
         <Fragment key={item.label}>
@@ -166,38 +184,49 @@ export function BottomNavigationWithDrawer({
               className='flex flex-col justify-center items-center flex-grow pt-1 pb-[12px]'
               type='button'
               onClick={item.onClick}
+              data-testid={item.name}
             >
-              <div className='flex flex-col justify-center items-center'>
-                {active === item.name && <item.active className='text-blue-900' />}
-                {active !== item.name && <item.inactive />}
-              </div>
-              <span
-                className={cn(
-                  'text-center text-label-m',
-                  active === item.name && 'font-b text-blue-1000'
-                )}
-              >
-                {item.label}
-              </span>
+              <NotificationBadge count={1}>
+                <div
+                  className={cn(
+                    'flex flex-col justify-center items-center w-14 h-8 rounded-md',
+                    active === item.name && 'bg-blue-50'
+                  )}
+                >
+                  {active === item.name && <item.active className='text-blue-900' />}
+                  {active !== item.name && <item.inactive />}
+                </div>
+                <span
+                  className={cn(
+                    'text-center text-label-m',
+                    active === item.name && 'font-b text-blue-1000'
+                  )}
+                >
+                  {item.label}
+                </span>
+              </NotificationBadge>
             </button>
           )}
           {!item.onClick && (
             <a
               className='flex flex-col justify-center items-center flex-grow pt-1 pb-[12px]'
               href={item.href}
+              data-testid={item.name}
             >
-              <div className='flex flex-col justify-center items-center'>
-                {active === item.name && <item.active className='text-blue-900' />}
-                {active !== item.name && <item.inactive />}
-              </div>
-              <span
-                className={cn(
-                  'text-center text-label-m',
-                  active === item.name && 'font-b text-blue-1000'
-                )}
-              >
-                {item.label}
-              </span>
+              <NotificationBadge>
+                <div className='flex flex-col justify-center items-center'>
+                  {active === item.name && <item.active className='text-blue-900' />}
+                  {active !== item.name && <item.inactive />}
+                </div>
+                <span
+                  className={cn(
+                    'text-center text-label-m',
+                    active === item.name && 'font-b text-blue-1000'
+                  )}
+                >
+                  {item.label}
+                </span>
+              </NotificationBadge>
             </a>
           )}
         </Fragment>
@@ -205,40 +234,68 @@ export function BottomNavigationWithDrawer({
       <button
         className='flex flex-col justify-center items-center flex-grow pt-1 pb-[12px]'
         type='button'
-        // onClick={() => dialogRef.current?.showModal()}
         onClick={() => setOpen(true)}
+        data-testid='others'
       >
-        <div className='flex flex-col justify-center items-center'>
-          <MenuOutlined />
+        <div>
+          <div className='flex flex-col justify-center items-center w-14 h-8'>
+            <MenuOutlined />
+          </div>
+          <span className='text-center text-label-m'>その他</span>
         </div>
-        <span className='text-center text-label-m'>その他</span>
       </button>
-      <div
-        className={cn(
-          'fixed inset-0 opacity-0 bg-black/30 rounded grid place-items-center transition duration-400',
-          !open && '-z-10',
-          open && 'z-0 opacity-100'
-        )}
-        onClick={() => setOpen(false)}
-      >
-        <div
-          className={cn('bg-white m-8 p-8', !open && 'hidden', open && 'block')}
-          onClick={(e) => e.stopPropagation()}
-        >
-          <button onClick={() => setOpen(false)}>close</button>
-        </div>
-      </div>
-      {/* <dialog
-        className='block fixed h-0 -z-1 inset-0 opacity-0 -translate-y-full transition duration-1000 backdrop:bg-black/30 backdrop:opacity-0 backdrop:transition open:h-auto open:opacity-100 open:translate-y-0 backdrop:open:opacity-100'
-        ref={dialogRef}
-        onClick={(e) => {
-          if (e.target instanceof HTMLDialogElement) dialogRef.current?.close();
-        }}
-      >
-        <div className='bg-white m-8'>
-          <button onClick={() => dialogRef.current?.close()}>close</button>
-        </div>
-      </dialog> */}
+      <Drawer direction='right'>
+        <Drawer.Overlay />
+        <Drawer.Content>
+          <div>
+            {manyItems.slice(4).map((item) => (
+              <Fragment key={item.label}>
+                {item.onClick && (
+                  <button
+                    className='flex justify-center place-items-center flex-grow gap-x-2 pt-1 pb-[12px]'
+                    type='button'
+                    onClick={item.onClick}
+                    data-testid={item.name}
+                  >
+                    <div className='flex flex-col justify-center items-center'>
+                      {active === item.name && <item.active className='text-blue-900' />}
+                      {active !== item.name && <item.inactive />}
+                    </div>
+                    <span
+                      className={cn(
+                        'text-center text-label-m',
+                        active === item.name && 'font-b text-blue-1000'
+                      )}
+                    >
+                      {item.label}
+                    </span>
+                  </button>
+                )}
+                {!item.onClick && (
+                  <a
+                    className='flex justify-center items-center flex-grow pt-1 pb-[12px]'
+                    href={item.href}
+                    data-testid={item.name}
+                  >
+                    <div className='flex flex-col justify-center items-center'>
+                      {active === item.name && <item.active className='text-blue-900' />}
+                      {active !== item.name && <item.inactive />}
+                    </div>
+                    <span
+                      className={cn(
+                        'text-center text-label-m',
+                        active === item.name && 'font-b text-blue-1000'
+                      )}
+                    >
+                      {item.label}
+                    </span>
+                  </a>
+                )}
+              </Fragment>
+            ))}
+          </div>
+        </Drawer.Content>
+      </Drawer>
     </nav>
   );
 }

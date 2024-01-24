@@ -1,7 +1,7 @@
 import React from 'react';
 import { IconProps } from '../../types';
 
-export function LuggageOutlined({ className, size = 24, color = 'currentColor' }: IconProps) {
+export function LuggageOutlined({ className, size = 24, color }: IconProps) {
   if (size % 8 !== 0) {
     console.warn(`The size prop (${size}) should be a multiple of 8.`);
   }
@@ -15,6 +15,7 @@ export function LuggageOutlined({ className, size = 24, color = 'currentColor' }
       style={color ? { color: color } : undefined}
       viewBox='0 0 25 25'
       fill='none'
+      data-testid='luggage-outlined'
     >
       <g clipPath='url(#clip0_115_5474)'>
         <path
@@ -33,7 +34,7 @@ export function LuggageOutlined({ className, size = 24, color = 'currentColor' }
   );
 }
 
-export function LuggageFilled({ className, size = 24, color = 'currentColor' }: IconProps) {
+export function LuggageFilled({ className, size = 24, color }: IconProps) {
   if (size % 8 !== 0) {
     console.warn(`The size prop (${size}) should be a multiple of 8.`);
   }
@@ -47,6 +48,7 @@ export function LuggageFilled({ className, size = 24, color = 'currentColor' }: 
       style={color ? { color: color } : undefined}
       viewBox='0 0 25 25'
       fill='none'
+      data-testid='luggage-filled'
     >
       <g clipPath='url(#clip0_115_5481)'>
         <path

@@ -1,7 +1,7 @@
 import React from 'react';
 import { IconProps } from '../../types';
 
-export function SubtractOutlined({ className, size = 24, color = 'currentColor' }: IconProps) {
+export function SubtractOutlined({ className, size = 24, color }: IconProps) {
   if (size % 8 !== 0) {
     console.warn(`The size prop (${size}) should be a multiple of 8.`);
   }
@@ -15,6 +15,7 @@ export function SubtractOutlined({ className, size = 24, color = 'currentColor' 
       style={color ? { color: color } : undefined}
       viewBox='0 0 25 25'
       fill='none'
+      data-testid='subtract-outlined'
     >
       <g clipPath='url(#clip0_2869_9440)'>
         <path d='M21.1856 11.3467H3.18555V12.8467H21.1856V11.3467Z' fill='currentColor' />
@@ -28,7 +29,7 @@ export function SubtractOutlined({ className, size = 24, color = 'currentColor' 
   );
 }
 
-export function SubtractFilled({ className, size = 24, color = 'currentColor' }: IconProps) {
+export function SubtractFilled({ className, size = 24, color }: IconProps) {
   if (size % 8 !== 0) {
     console.warn(`The size prop (${size}) should be a multiple of 8.`);
   }
@@ -42,6 +43,7 @@ export function SubtractFilled({ className, size = 24, color = 'currentColor' }:
       style={color ? { color: color } : undefined}
       viewBox='0 0 25 25'
       fill='none'
+      data-testid='subtract-filled'
     >
       <g clipPath='url(#clip0_2869_9441)'>
         <path d='M21.3863 11.1465L2.98633 11.1465V13.1465H21.3863V11.1465Z' fill='currentColor' />

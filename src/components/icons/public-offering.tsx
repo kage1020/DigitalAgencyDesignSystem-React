@@ -1,11 +1,7 @@
 import React from 'react';
 import { IconProps } from '../../types';
 
-export function PublicOfferingOutlined({
-  className,
-  size = 24,
-  color = 'currentColor',
-}: IconProps) {
+export function PublicOfferingOutlined({ className, size = 24, color }: IconProps) {
   if (size % 8 !== 0) {
     console.warn(`The size prop (${size}) should be a multiple of 8.`);
   }
@@ -19,6 +15,7 @@ export function PublicOfferingOutlined({
       style={color ? { color: color } : undefined}
       viewBox='0 0 25 25'
       fill='none'
+      data-testid='public-offering-outlined'
     >
       <g clipPath='url(#clip0_115_5441)'>
         <path
@@ -35,7 +32,7 @@ export function PublicOfferingOutlined({
   );
 }
 
-export function PublicOfferingFilled({ className, size = 24, color = 'currentColor' }: IconProps) {
+export function PublicOfferingFilled({ className, size = 24, color }: IconProps) {
   if (size % 8 !== 0) {
     console.warn(`The size prop (${size}) should be a multiple of 8.`);
   }
@@ -49,6 +46,7 @@ export function PublicOfferingFilled({ className, size = 24, color = 'currentCol
       style={color ? { color: color } : undefined}
       viewBox='0 0 25 25'
       fill='none'
+      data-testid='public-offering-filled'
     >
       <g clipPath='url(#clip0_115_5444)'>
         <path

@@ -1,7 +1,7 @@
 import React from 'react';
 import { IconProps } from '../../types';
 
-export function DownloadOutlined({ className, size = 24, color = 'currentColor' }: IconProps) {
+export function DownloadOutlined({ className, size = 24, color }: IconProps) {
   if (size % 8 !== 0) {
     console.warn(`The size prop (${size}) should be a multiple of 8.`);
   }
@@ -15,6 +15,7 @@ export function DownloadOutlined({ className, size = 24, color = 'currentColor' 
       style={color ? { color: color } : undefined}
       viewBox='0 0 25 25'
       fill='none'
+      data-testid='download-outlined'
     >
       <g clipPath='url(#clip0_115_5328)'>
         <path
@@ -33,7 +34,7 @@ export function DownloadOutlined({ className, size = 24, color = 'currentColor' 
   );
 }
 
-export function DownloadFilled({ className, size = 24, color = 'currentColor' }: IconProps) {
+export function DownloadFilled({ className, size = 24, color }: IconProps) {
   if (size % 8 !== 0) {
     console.warn(`The size prop (${size}) should be a multiple of 8.`);
   }
@@ -47,6 +48,7 @@ export function DownloadFilled({ className, size = 24, color = 'currentColor' }:
       style={color ? { color: color } : undefined}
       viewBox='0 0 25 25'
       fill='none'
+      data-testid='download-filled'
     >
       <g clipPath='url(#clip0_115_5333)'>
         <path

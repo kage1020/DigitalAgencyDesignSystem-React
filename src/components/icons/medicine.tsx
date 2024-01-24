@@ -1,7 +1,7 @@
 import React from 'react';
 import { IconProps } from '../../types';
 
-export function MedicineOutlined({ className, size = 24, color = 'currentColor' }: IconProps) {
+export function MedicineOutlined({ className, size = 24, color }: IconProps) {
   if (size % 8 !== 0) {
     console.warn(`The size prop (${size}) should be a multiple of 8.`);
   }
@@ -15,6 +15,7 @@ export function MedicineOutlined({ className, size = 24, color = 'currentColor' 
       style={color ? { color: color } : undefined}
       viewBox='0 0 25 25'
       fill='none'
+      data-testid='medicine-outlined'
     >
       <g clipPath='url(#clip0_115_5713)'>
         <path
@@ -31,7 +32,7 @@ export function MedicineOutlined({ className, size = 24, color = 'currentColor' 
   );
 }
 
-export function MedicineFilled({ className, size = 24, color = 'currentColor' }: IconProps) {
+export function MedicineFilled({ className, size = 24, color }: IconProps) {
   if (size % 8 !== 0) {
     console.warn(`The size prop (${size}) should be a multiple of 8.`);
   }
@@ -45,6 +46,7 @@ export function MedicineFilled({ className, size = 24, color = 'currentColor' }:
       style={color ? { color: color } : undefined}
       viewBox='0 0 25 25'
       fill='none'
+      data-testid='medicine-filled'
     >
       <g clipPath='url(#clip0_115_5716)'>
         <path

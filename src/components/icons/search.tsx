@@ -1,7 +1,7 @@
 import React from 'react';
 import { IconProps } from '../../types';
 
-export function SearchOutlined({ className, size = 24, color = 'currentColor' }: IconProps) {
+export function SearchOutlined({ className, size = 24, color }: IconProps) {
   if (size % 8 !== 0) {
     console.warn(`The size prop (${size}) should be a multiple of 8.`);
   }
@@ -15,6 +15,7 @@ export function SearchOutlined({ className, size = 24, color = 'currentColor' }:
       style={color ? { color: color } : undefined}
       viewBox='0 0 25 25'
       fill='none'
+      data-testid='search-outlined'
     >
       <g clipPath='url(#clip0_115_5361)'>
         <path
@@ -31,7 +32,7 @@ export function SearchOutlined({ className, size = 24, color = 'currentColor' }:
   );
 }
 
-export function SearchFilled({ className, size = 24, color = 'currentColor' }: IconProps) {
+export function SearchFilled({ className, size = 24, color }: IconProps) {
   if (size % 8 !== 0) {
     console.warn(`The size prop (${size}) should be a multiple of 8.`);
   }
@@ -45,6 +46,7 @@ export function SearchFilled({ className, size = 24, color = 'currentColor' }: I
       style={color ? { color: color } : undefined}
       viewBox='0 0 25 25'
       fill='none'
+      data-testid='search-filled'
     >
       <g clipPath='url(#clip0_115_5364)'>
         <path
