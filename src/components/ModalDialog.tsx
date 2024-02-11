@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { createPortal } from 'react-dom';
+import { cn } from '../libs/util';
 import useModalDialog from '../hooks/useModalDialog';
-import { cn } from '../libs';
 import {
   ModalDialogActionsProps,
   ModalDialogContentProps,

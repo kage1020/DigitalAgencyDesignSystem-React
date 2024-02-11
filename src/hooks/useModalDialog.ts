@@ -1,13 +1,13 @@
 import { Dispatch, SetStateAction, createContext, useContext } from 'react';
 
-type ModalDialogContext = {
+type ModalDialogContextType = {
   open: boolean;
   rendering: boolean;
   setOpen: Dispatch<SetStateAction<boolean>>;
   setRendering: Dispatch<SetStateAction<boolean>>;
 };
 
-export const ModalDialogContext = createContext<ModalDialogContext>({
+export const ModalDialogContext = createContext<ModalDialogContextType>({
   open: false,
   rendering: false,
   setOpen: () => {},

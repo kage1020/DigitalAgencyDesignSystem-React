@@ -1,6 +1,4 @@
 import React, { Fragment, useEffect } from 'react';
-import { BottomNavigationProps } from '../types';
-import { cn } from '../libs';
 import {
   HistoryFilled,
   HistoryOutlined,
@@ -19,6 +17,8 @@ import {
 import Drawer from './Drawer';
 import useDrawer from '../hooks/useDrawer';
 import NotificationBadge from './NotificationBadge';
+import { BottomNavigationProps } from '../types';
+import { cn } from '../libs/util';
 
 type NavigationName = 'home' | 'search' | 'notification' | 'me';
 
@@ -86,7 +86,7 @@ export default function BottomNavigation({
         <Fragment key={item.label}>
           {item.onClick && (
             <button
-              className='flex flex-col justify-center items-center flex-grow pt-1 pb-[12px]'
+              className='flex flex-col justify-center items-center flex-grow pt-1 pb-[12px] min-h-[44px] min-w-[44px]'
               type='button'
               onClick={item.onClick}
               data-testid={item.name}
@@ -107,7 +107,7 @@ export default function BottomNavigation({
           )}
           {!item.onClick && (
             <a
-              className='flex flex-col justify-center items-center flex-grow pt-1 pb-[12px]'
+              className='flex flex-col justify-center items-center flex-grow pt-1 pb-[12px] min-h-[44px] min-w-[44px]'
               href={item.href}
               data-testid={item.name}
             >
@@ -181,7 +181,7 @@ export function BottomNavigationWithDrawer({
         <Fragment key={item.label}>
           {item.onClick && (
             <button
-              className='flex flex-col justify-center items-center flex-grow pt-1 pb-[12px]'
+              className='flex flex-col justify-center items-center flex-grow pt-1 pb-[12px] min-h-[44px] min-w-[44px]'
               type='button'
               onClick={item.onClick}
               data-testid={item.name}
@@ -209,7 +209,7 @@ export function BottomNavigationWithDrawer({
           )}
           {!item.onClick && (
             <a
-              className='flex flex-col justify-center items-center flex-grow pt-1 pb-[12px]'
+              className='flex flex-col justify-center items-center flex-grow pt-1 pb-[12px] min-h-[44px] min-w-[44px]'
               href={item.href}
               data-testid={item.name}
             >
@@ -232,7 +232,7 @@ export function BottomNavigationWithDrawer({
         </Fragment>
       ))}
       <button
-        className='flex flex-col justify-center items-center flex-grow pt-1 pb-[12px]'
+        className='flex flex-col justify-center items-center flex-grow pt-1 pb-[12px] min-h-[44px] min-w-[44px]'
         type='button'
         onClick={() => setOpen(true)}
         data-testid='others'

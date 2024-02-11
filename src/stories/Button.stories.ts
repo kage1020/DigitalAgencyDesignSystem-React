@@ -14,6 +14,7 @@ export default {
       options: ['primary', 'secondary', 'tertiary'],
       control: { type: 'select' },
     },
+    disabled: { control: 'boolean' },
   },
 };
 
@@ -25,6 +26,15 @@ export const Primary = {
   },
 };
 
+export const PrimaryDisabled = {
+  args: {
+    children: 'ラベル',
+    size: 'large',
+    variant: 'primary',
+    disabled: true,
+  },
+};
+
 export const Secondary = {
   args: {
     children: 'ラベル',
@@ -33,10 +43,28 @@ export const Secondary = {
   },
 };
 
+export const SecondaryDisabled = {
+  args: {
+    children: 'ラベル',
+    size: 'large',
+    variant: 'secondary',
+    disabled: true,
+  },
+};
+
 export const Tertiary = {
   args: {
     children: 'ラベル',
     size: 'large',
     variant: 'tertiary',
+  },
+};
+
+export const TertiaryDisabled = {
+  args: {
+    children: 'ラベル',
+    size: 'large',
+    variant: 'tertiary',
+    disabled: true,
   },
 };

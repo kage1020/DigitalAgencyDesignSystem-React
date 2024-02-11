@@ -1,7 +1,9 @@
 {
-    "cSpell.words": [
-        "onfill",
-        "sumi",
-        "testid"
-    ]
+  "cSpell.words": [
+    "autodocs",
+    "onfill",
+    "sumi",
+    "testid"
+  ],
+  "tailwindCSS.experimental.classRegex": [["tv\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]]
 }

@@ -469,7 +469,7 @@ export default {
         '.border-field': {
           '@apply border-sumi-900 dark:border-white border': {},
         },
-        '.border0divider': {
+        '.border-divider': {
           '@apply border-sumi-300 dark:border-sumi-700 border': {},
         },
         '.border-focus': {

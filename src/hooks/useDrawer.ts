@@ -1,13 +1,13 @@
 import { Dispatch, SetStateAction, createContext, useContext } from 'react';
 
-type DrawerContext = {
+type DrawerContextType = {
   open: boolean;
   rendering: boolean;
   setOpen: Dispatch<SetStateAction<boolean>>;
   setRendering: Dispatch<SetStateAction<boolean>>;
 };
 
-export const DrawerContext = createContext<DrawerContext>({
+export const DrawerContext = createContext<DrawerContextType>({
   open: false,
   rendering: false,
   setOpen: () => {},

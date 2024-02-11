@@ -61,6 +61,15 @@ export type ScrollTopButtonProps = Omit<
   'children' | 'disabled' | 'type'
 >;
 
+export type TextAreaProps = JSX.IntrinsicElements['textarea'] & {
+  label: string;
+  supportText?: string;
+  errorText?: string;
+  maxLength?: number;
+};
+
 export type TextFieldProps = JSX.IntrinsicElements['input'] & {
   label: string;
+  supportText?: string;
+  errorText?: string;
 };

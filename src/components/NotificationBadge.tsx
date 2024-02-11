@@ -1,6 +1,6 @@
 import React from 'react';
-import { cn } from '../libs';
 import { NotificationBadgeProps } from '../types';
+import { cn } from '../libs/util';
 
 export default function NotificationBadge({
   variant = 'count',
