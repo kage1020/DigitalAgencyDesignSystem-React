@@ -1,7 +1,8 @@
+import { Config } from "tailwindcss"
 import defaultTheme from "tailwindcss/defaultTheme"
+import plugin from "tailwindcss/plugin"
 
-/** @type {import('tailwindcss').Config} */
-const tailwindConfig = {
+export const tailwindConfig = {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   darkMode: "class",
   theme: {
@@ -356,12 +357,39 @@ const tailwindConfig = {
       ],
     },
     fontWeight: {
-      r: 400,
-      m: 500,
-      b: 700,
+      r: "400",
+      m: "500",
+      b: "700",
     },
     height: {
       ...defaultTheme.spacing,
+      auto: "auto",
+      "1/2": "50%",
+      "1/3": "33.333333%",
+      "2/3": "66.666667%",
+      "1/4": "25%",
+      "2/4": "50%",
+      "3/4": "75%",
+      "1/5": "20%",
+      "2/5": "40%",
+      "3/5": "60%",
+      "4/5": "80%",
+      "1/6": "16.666667%",
+      "2/6": "33.333333%",
+      "3/6": "50%",
+      "4/6": "66.666667%",
+      "5/6": "83.333333%",
+      "1/12": "8.333333%",
+      "2/12": "16.333333%",
+      "3/12": "25%",
+      "4/12": "33.333333%",
+      "5/12": "41.666667%",
+      "6/12": "50%",
+      "7/12": "58.333333%",
+      "8/12": "66.666667%",
+      "9/12": "75%",
+      "10/12": "83.333333%",
+      "11/12": "91.666667%",
       full: "100%",
       screen: "100vh",
       svh: "100svh",
@@ -371,7 +399,18 @@ const tailwindConfig = {
       max: "max-content",
       fit: "fit-content",
     },
-    inset: defaultTheme.spacing,
+    inset: {
+      ...defaultTheme.spacing,
+      auto: "auto",
+      px: "1px",
+      "1/2": "50%",
+      "1/3": "33.333333%",
+      "2/3": "66.666667%",
+      "1/4": "25%",
+      "2/4": "50%",
+      "3/4": "75%",
+      full: "100%",
+    },
     letterSpacing: {
       s: "0.02em",
       m: "0.04em",
@@ -432,9 +471,45 @@ const tailwindConfig = {
       34: "272px",
       55: "440px",
     },
-    translate: { ...defaultTheme.spacing, full: "100%" },
+    translate: {
+      ...defaultTheme.spacing,
+      "1/2": "50%",
+      "1/3": "33.333333%",
+      "2/3": "66.666667%",
+      "1/4": "25%",
+      "2/4": "50%",
+      "3/4": "75%",
+      full: "100%",
+    },
     width: {
       ...defaultTheme.spacing,
+      auto: "auto",
+      "1/2": "50%",
+      "1/3": "33.333333%",
+      "2/3": "66.666667%",
+      "1/4": "25%",
+      "2/4": "50%",
+      "3/4": "75%",
+      "1/5": "20%",
+      "2/5": "40%",
+      "3/5": "60%",
+      "4/5": "80%",
+      "1/6": "16.666667%",
+      "2/6": "33.333333%",
+      "3/6": "50%",
+      "4/6": "66.666667%",
+      "5/6": "83.333333%",
+      "1/12": "8.333333%",
+      "2/12": "16.333333%",
+      "3/12": "25%",
+      "4/12": "33.333333%",
+      "5/12": "41.666667%",
+      "6/12": "50%",
+      "7/12": "58.333333%",
+      "8/12": "66.666667%",
+      "9/12": "75%",
+      "10/12": "83.333333%",
+      "11/12": "91.666667%",
       full: "100%",
       screen: "100vw",
       svw: "100svw",
@@ -455,7 +530,7 @@ const tailwindConfig = {
     },
   },
   plugins: [
-    ({ addUtilities }) => {
+    plugin(({ addUtilities }) => {
       addUtilities({
         ".text-body": {
           "@apply text-sumi-900 dark:text-white": {},
@@ -569,8 +644,8 @@ const tailwindConfig = {
           "@apply bg-sea-400 dark:bg-sea-300": {},
         },
       })
-    },
+    }),
   ],
-}
+} satisfies Config
 
 export default tailwindConfig
