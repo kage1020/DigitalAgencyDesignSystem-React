@@ -1,9 +1,9 @@
 {
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true,
-  "editor.formatOnPaste": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  },
-  "cSpell.words": ["sumi", "vals"]
+  "cSpell.words": [
+    "autodocs",
+    "onfill",
+    "sumi",
+    "testid"
+  ],
+  "tailwindCSS.experimental.classRegex": [["tv\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]]
 }
