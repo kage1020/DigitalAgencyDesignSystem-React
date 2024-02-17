@@ -1,12 +1,11 @@
-import TextField from "@/components/TextField"
+import TextArea from "@/components/TextArea"
 
 export default {
-  title: "Components/TextField",
-  component: TextField,
+  title: "Components/TextArea",
+  component: TextArea,
   tags: ["autodocs"],
   argTypes: {
     label: { control: "text" },
-    type: { control: "text" },
     supportText: { control: "text" },
     errorText: { control: "text" },
     required: { control: "boolean" },
@@ -17,30 +16,14 @@ export default {
 export const Default = {
   args: {
     label: "ラベル",
+    supportText: "サポートテキスト",
   },
 }
 
 export const Required = {
   args: {
     label: "ラベル",
-    required: true,
-  },
-}
-
-export const Filled = {
-  args: {
-    label: "ラベル",
-    value: "入力済みの内容",
-    supportText: "サポートテキスト",
-  },
-}
-
-export const Error = {
-  args: {
-    label: "ラベル",
-    value: "誤った入力内容",
-    type: "email",
-    required: true,
     errorText: "エラーメッセージ",
+    required: true,
   },
 }

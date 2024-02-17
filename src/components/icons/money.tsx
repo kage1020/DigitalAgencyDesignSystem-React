@@ -1,7 +1,12 @@
 import { IconProps } from "@/types"
 
-export function MoneyOutlined({ className, size = 24, color }: IconProps) {
-  if (size % 8 !== 0) {
+export function MoneyOutlined({
+  className,
+  size = 24,
+  color,
+  ...props
+}: IconProps) {
+  if (size % 8 !== 0 && process.env.NODE_ENV === "development") {
     console.warn(`The size prop (${size}) should be a multiple of 8.`)
   }
 
@@ -14,12 +19,13 @@ export function MoneyOutlined({ className, size = 24, color }: IconProps) {
       style={color ? { color: color } : undefined}
       viewBox="0 0 25 25"
       fill="none"
+      {...props}
       data-testid="money-outlined"
     >
       <g clipPath="url(#clip0_115_5671)">
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M2.51172 12.1465C2.51172 17.6465 7.01172 22.1465 12.5117 22.1465C18.0117 22.1465 22.5117 17.6465 22.5117 12.1465C22.5117 6.64648 18.0117 2.14648 12.5117 2.14648C7.01172 2.14648 2.51172 6.64648 2.51172 12.1465ZM4.01172 12.1465C4.01172 7.44648 7.81172 3.64648 12.5117 3.64648C17.2117 3.64648 21.0117 7.44648 21.0117 12.1465C21.0117 16.8465 17.2117 20.6465 12.5117 20.6465C7.81172 20.6465 4.01172 16.8465 4.01172 12.1465ZM12.5133 11.8465L15.2133 7.14648H16.9133L14.1133 12.1465H16.5133V13.1465H13.2133V14.6465H16.5133V15.6465H13.2133V18.1465H11.7133V15.6465H8.51328V14.6465H11.7133V13.1465H8.51328V12.1465H10.9133L8.11328 7.14648H9.81328L12.5133 11.8465Z"
           fill="currentColor"
         />
@@ -38,8 +44,13 @@ export function MoneyOutlined({ className, size = 24, color }: IconProps) {
   )
 }
 
-export function MoneyFilled({ className, size = 24, color }: IconProps) {
-  if (size % 8 !== 0) {
+export function MoneyFilled({
+  className,
+  size = 24,
+  color,
+  ...props
+}: IconProps) {
+  if (size % 8 !== 0 && process.env.NODE_ENV === "development") {
     console.warn(`The size prop (${size}) should be a multiple of 8.`)
   }
 
@@ -52,6 +63,7 @@ export function MoneyFilled({ className, size = 24, color }: IconProps) {
       style={color ? { color: color } : undefined}
       viewBox="0 0 25 25"
       fill="none"
+      {...props}
       data-testid="money-filled"
     >
       <g clipPath="url(#clip0_115_5676)">

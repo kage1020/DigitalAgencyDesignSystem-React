@@ -4,8 +4,9 @@ export function PersonalComputerOutlined({
   className,
   size = 24,
   color,
+  ...props
 }: IconProps) {
-  if (size % 8 !== 0) {
+  if (size % 8 !== 0 && process.env.NODE_ENV === "development") {
     console.warn(`The size prop (${size}) should be a multiple of 8.`)
   }
 
@@ -18,6 +19,7 @@ export function PersonalComputerOutlined({
       style={color ? { color: color } : undefined}
       viewBox="0 0 25 25"
       fill="none"
+      {...props}
       data-testid="personal-computer-outlined"
     >
       <g clipPath="url(#clip0_115_5572)">
@@ -44,8 +46,9 @@ export function PersonalComputerFilled({
   className,
   size = 24,
   color,
+  ...props
 }: IconProps) {
-  if (size % 8 !== 0) {
+  if (size % 8 !== 0 && process.env.NODE_ENV === "development") {
     console.warn(`The size prop (${size}) should be a multiple of 8.`)
   }
 
@@ -58,6 +61,7 @@ export function PersonalComputerFilled({
       style={color ? { color: color } : undefined}
       viewBox="0 0 25 25"
       fill="none"
+      {...props}
       data-testid="personal-computer-filled"
     >
       <g clipPath="url(#clip0_115_5575)">

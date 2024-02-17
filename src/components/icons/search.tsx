@@ -1,7 +1,12 @@
 import { IconProps } from "@/types"
 
-export function SearchOutlined({ className, size = 24, color }: IconProps) {
-  if (size % 8 !== 0) {
+export function SearchOutlined({
+  className,
+  size = 24,
+  color,
+  ...props
+}: IconProps) {
+  if (size % 8 !== 0 && process.env.NODE_ENV === "development") {
     console.warn(`The size prop (${size}) should be a multiple of 8.`)
   }
 
@@ -14,6 +19,7 @@ export function SearchOutlined({ className, size = 24, color }: IconProps) {
       style={color ? { color: color } : undefined}
       viewBox="0 0 25 25"
       fill="none"
+      {...props}
       data-testid="search-outlined"
     >
       <g clipPath="url(#clip0_115_5361)">
@@ -36,8 +42,13 @@ export function SearchOutlined({ className, size = 24, color }: IconProps) {
   )
 }
 
-export function SearchFilled({ className, size = 24, color }: IconProps) {
-  if (size % 8 !== 0) {
+export function SearchFilled({
+  className,
+  size = 24,
+  color,
+  ...props
+}: IconProps) {
+  if (size % 8 !== 0 && process.env.NODE_ENV === "development") {
     console.warn(`The size prop (${size}) should be a multiple of 8.`)
   }
 
@@ -50,6 +61,7 @@ export function SearchFilled({ className, size = 24, color }: IconProps) {
       style={color ? { color: color } : undefined}
       viewBox="0 0 25 25"
       fill="none"
+      {...props}
       data-testid="search-filled"
     >
       <g clipPath="url(#clip0_115_5364)">

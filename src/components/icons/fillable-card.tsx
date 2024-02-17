@@ -4,8 +4,9 @@ export function FillableCardOutlined({
   className,
   size = 24,
   color,
+  ...props
 }: IconProps) {
-  if (size % 8 !== 0) {
+  if (size % 8 !== 0 && process.env.NODE_ENV === "development") {
     console.warn(`The size prop (${size}) should be a multiple of 8.`)
   }
 
@@ -18,6 +19,7 @@ export function FillableCardOutlined({
       style={color ? { color: color } : undefined}
       viewBox="0 0 25 25"
       fill="none"
+      {...props}
       data-testid="fillable-card-outlined"
     >
       <g clipPath="url(#clip0_115_5485)">
@@ -42,8 +44,13 @@ export function FillableCardOutlined({
   )
 }
 
-export function FillableCardFilled({ className, size = 24, color }: IconProps) {
-  if (size % 8 !== 0) {
+export function FillableCardFilled({
+  className,
+  size = 24,
+  color,
+  ...props
+}: IconProps) {
+  if (size % 8 !== 0 && process.env.NODE_ENV === "development") {
     console.warn(`The size prop (${size}) should be a multiple of 8.`)
   }
 
@@ -56,6 +63,7 @@ export function FillableCardFilled({ className, size = 24, color }: IconProps) {
       style={color ? { color: color } : undefined}
       viewBox="0 0 25 25"
       fill="none"
+      {...props}
       data-testid="fillable-card-filled"
     >
       <g clipPath="url(#clip0_115_5494)">

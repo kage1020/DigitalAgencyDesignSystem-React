@@ -4,8 +4,9 @@ export function AuthenticationOutlined({
   className,
   size = 24,
   color,
+  ...props
 }: IconProps) {
-  if (size % 8 !== 0) {
+  if (size % 8 !== 0 && process.env.NODE_ENV === "development") {
     console.warn(`The size prop (${size}) should be a multiple of 8.`)
   }
 
@@ -18,6 +19,7 @@ export function AuthenticationOutlined({
       style={color ? { color: color } : undefined}
       viewBox="0 0 25 25"
       fill="none"
+      {...props}
       data-testid="authentication-outlined"
     >
       <g clipPath="url(#clip0_115_5894)">
@@ -46,8 +48,9 @@ export function AuthenticationFilled({
   className,
   size = 24,
   color,
+  ...props
 }: IconProps) {
-  if (size % 8 !== 0) {
+  if (size % 8 !== 0 && process.env.NODE_ENV === "development") {
     console.warn(`The size prop (${size}) should be a multiple of 8.`)
   }
 
@@ -60,6 +63,7 @@ export function AuthenticationFilled({
       style={color ? { color: color } : undefined}
       viewBox="0 0 25 25"
       fill="none"
+      {...props}
       data-testid="authentication-filled"
     >
       <g clipPath="url(#clip0_115_5899)">

@@ -4,8 +4,9 @@ export function CertificationWithSealOutlined({
   className,
   size = 24,
   color,
+  ...props
 }: IconProps) {
-  if (size % 8 !== 0) {
+  if (size % 8 !== 0 && process.env.NODE_ENV === "development") {
     console.warn(`The size prop (${size}) should be a multiple of 8.`)
   }
 
@@ -18,6 +19,7 @@ export function CertificationWithSealOutlined({
       style={color ? { color: color } : undefined}
       viewBox="0 0 25 25"
       fill="none"
+      {...props}
       data-testid="certification-with-seal-outlined"
     >
       <g clipPath="url(#clip0_115_5405)">
@@ -46,8 +48,9 @@ export function CertificationWithSealFilled({
   className,
   size = 24,
   color,
+  ...props
 }: IconProps) {
-  if (size % 8 !== 0) {
+  if (size % 8 !== 0 && process.env.NODE_ENV === "development") {
     console.warn(`The size prop (${size}) should be a multiple of 8.`)
   }
 
@@ -60,6 +63,7 @@ export function CertificationWithSealFilled({
       style={color ? { color: color } : undefined}
       viewBox="0 0 25 25"
       fill="none"
+      {...props}
       data-testid="certification-with-seal-filled"
     >
       <g clipPath="url(#clip0_115_5413)">

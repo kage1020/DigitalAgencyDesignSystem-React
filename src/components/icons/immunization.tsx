@@ -4,8 +4,9 @@ export function ImmunizationOutlined({
   className,
   size = 24,
   color,
+  ...props
 }: IconProps) {
-  if (size % 8 !== 0) {
+  if (size % 8 !== 0 && process.env.NODE_ENV === "development") {
     console.warn(`The size prop (${size}) should be a multiple of 8.`)
   }
 
@@ -18,6 +19,7 @@ export function ImmunizationOutlined({
       style={color ? { color: color } : undefined}
       viewBox="0 0 25 25"
       fill="none"
+      {...props}
       data-testid="immunization-outlined"
     >
       <g clipPath="url(#clip0_115_5706)">
@@ -40,8 +42,13 @@ export function ImmunizationOutlined({
   )
 }
 
-export function ImmunizationFilled({ className, size = 24, color }: IconProps) {
-  if (size % 8 !== 0) {
+export function ImmunizationFilled({
+  className,
+  size = 24,
+  color,
+  ...props
+}: IconProps) {
+  if (size % 8 !== 0 && process.env.NODE_ENV === "development") {
     console.warn(`The size prop (${size}) should be a multiple of 8.`)
   }
 
@@ -54,6 +61,7 @@ export function ImmunizationFilled({ className, size = 24, color }: IconProps) {
       style={color ? { color: color } : undefined}
       viewBox="0 0 25 25"
       fill="none"
+      {...props}
       data-testid="immunization-filled"
     >
       <g clipPath="url(#clip0_115_5709)">

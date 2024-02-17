@@ -2,6 +2,8 @@ import ThemeSwitcher from "@/components/ThemeSwitcher"
 import Button from "@/components/Button"
 import ScrollTop from "@/components/ScrollTop"
 import TextField from "@/components/TextField"
+import TextArea from "@/components/TextArea"
+import Selector from "@/components/Selector"
 
 function App() {
   return (
@@ -48,7 +50,7 @@ function App() {
           <ScrollTop />
           <ScrollTop />
         </div> */}
-        <div className="grid grid-cols-3 gap-3 bg-white p-3 dark:bg-grey-900">
+        {/* <div className="grid grid-cols-3 gap-3 bg-white p-3 dark:bg-grey-900">
           <p className="flex items-center justify-center">Default</p>
           <TextField className="col-span-2" label="ラベル" />
           <p className="flex items-center justify-center">Focus</p>
@@ -71,6 +73,42 @@ function App() {
           />
           <p className="flex items-center justify-center">Disabled</p>
           <TextField className="col-span-2" label="ラベル" disabled />
+        </div> */}
+        {/* <div className="grid grid-cols-3 gap-3 bg-white p-3 dark:bg-grey-900">
+          <p className="flex items-center justify-center">Default</p>
+          <TextArea className="col-span-2" label="ラベル" />
+          <p className="flex items-center justify-center">Filled</p>
+          <TextArea
+            className="col-span-2"
+            label="ラベル"
+            value="入力済みの内容"
+            supportText="サポートテキストが入ります"
+            maxLength={100}
+          />
+          <p className="flex items-center justify-center">Error</p>
+          <TextArea
+            className="col-span-2"
+            label="ラベル"
+            value="誤った入力内容。誤った入力内容。"
+            required
+            errorText="エラーメッセージが入ります"
+            maxLength={10}
+          />
+          <p className="flex items-center justify-center">Disabled</p>
+          <TextArea className="col-span-2" label="ラベル" disabled />
+        </div> */}
+        <div>
+          <Selector
+            label="ラベル"
+            options={[
+              { value: "1", label: "選択肢1" },
+              { value: "2", label: "選択肢2" },
+              { value: "3", label: "選択肢3" },
+              { value: "4", label: "選択肢4" },
+              { value: "5", label: "選択肢5" },
+              { value: "6", label: "選択肢6" },
+            ]}
+          />
         </div>
       </div>
     </>
